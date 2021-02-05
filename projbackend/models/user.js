@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const crypto = require('crypto');
 const { v4: uuidv4 } = require('uuid');
 const { Schema } = mongoose;
@@ -25,7 +25,6 @@ var userSchema = new Schema({
   },
   encry_password:{
       type:String,
-      required:true
   },
   salt:String,
   role:{
@@ -35,7 +34,7 @@ var userSchema = new Schema({
   },
   purchases:{
       type:Array,
-      defauly=[]
+      default:[]
   }
 },{timestamp:true});
 
@@ -78,4 +77,4 @@ userSchema.methods={
 
 
 
-module.exports=mongoose.model("user",userSchema)
+module.exports=mongoose.model("User",userSchema)
