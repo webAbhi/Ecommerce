@@ -10,6 +10,7 @@ const cors =require("cors");
 
 const authRoutes=require("./routes/auth");
 const userRoutes=require("./routes/user");
+const categoryRoutes=require("./routes/category");
 
 
 //DB connection
@@ -33,8 +34,9 @@ app.use(cors());
 
 
 // Routes
-app.use("/api",authRoutes)
-app.use("/api",userRoutes)
+app.use("/api",authRoutes);
+app.use("/api",userRoutes);
+app.use("/api",categoryRoutes);
 
 
 app.get("/",(req,res)=>{

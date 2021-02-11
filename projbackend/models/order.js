@@ -22,7 +22,7 @@ const OrderSchema =new mongoose.Schema({
         type:ObjectId,
         ref:"user"
     }
-},{timestamp:true});
+},{timestamps:true});
 
 
 

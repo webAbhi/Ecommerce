@@ -9,7 +9,7 @@ const categorySchema =new mongoose.Schema({
         unique:true
 
     }
-},{timestamp:true});
+},{timestamps:true});
 
 
 
