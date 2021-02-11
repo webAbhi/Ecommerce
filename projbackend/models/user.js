@@ -37,7 +37,7 @@ var userSchema = new Schema({
       type:Array,
       default:[]
   }
-},{timestamp:true});
+},{timestamps:true});
 
 
 

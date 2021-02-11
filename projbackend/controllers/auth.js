@@ -1,6 +1,4 @@
 
-
-
 const User=require("../models/user");
 const { check,validationResult } = require('express-validator');
 var expressjwt =require('express-jwt');
@@ -38,7 +36,6 @@ exports.signup=(req,res)=>{
 exports.signin=(req,res) => {
 
     const {email,password}=req.body;
-    console.log(password);
 
     const errors=validationResult(req);
 
@@ -79,12 +76,36 @@ exports.signin=(req,res) => {
 };
 
 exports.signout=(req,res)=>{
-    res.send("user signout from controller");
+    res.clearCookie("token");
+    res.send("user signout");
 
 }
 
 
+//protecting the routes
+exports.isSignedIn=expressjwt({
+    secret:process.env.MYSECREAT,
+    userProperty:"auth"
+});
 
 
+exports.isAutenticated=(req,res,next)=>{
+    let checker =req.profile && req.auth && req.profile._id == req.auth._id;
+    if(!checker){
+        return res.status(403).json({
+            error:"ACCESS DENIED"
+        });
+    };
+    next();
+};
 
+exports.isAdmin=(req,res,next)=>{
+    let checker =req.profile && re.auth && req.profile._id == req.auth._id;
+    if(req.profile.role ===0){
+        return res.status(403).json({
+            error:"You are not ADMIN"
+        })
+    };
+    next();
+};
 
