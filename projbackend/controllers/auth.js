@@ -100,7 +100,7 @@ exports.isAutenticated=(req,res,next)=>{
 };
 
 exports.isAdmin=(req,res,next)=>{
-    let checker =req.profile && re.auth && req.profile._id == req.auth._id;
+    let checker =req.profile && req.auth && req.profile._id == req.auth._id;
     if(req.profile.role ===0){
         return res.status(403).json({
             error:"You are not ADMIN"

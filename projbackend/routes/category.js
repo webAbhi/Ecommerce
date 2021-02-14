@@ -12,7 +12,7 @@ router.param('categoryId',getCategoryById)
 
 // main router
 
-router.post("/category/create/userId",
+router.post("/category/create/:userId",
  isSignedIn,
  isAutenticated,
  isAdmin,
@@ -24,7 +24,7 @@ router.post("/category/create/userId",
 
 //update
 
-router.put("/category/:categoryId/userId",
+router.put("/category/:categoryId/:userId",
  isSignedIn,
  isAutenticated,
  isAdmin,
@@ -32,7 +32,7 @@ router.put("/category/:categoryId/userId",
 
 
  //delete
- router.delete("/category/:categoryId/userId",
+ router.delete("/category/:categoryId/:userId",
  isSignedIn,
  isAutenticated,
  isAdmin,

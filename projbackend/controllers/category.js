@@ -45,7 +45,7 @@ exports.getAllCategory =(req, res) => {
 }
 
 exports.updateCategory = (req,res) => {
-    const category = req.category;
+    const category = req.Category;
     category.name = req.body.name;
 
     category.save((err,updateCategory) => {
@@ -61,7 +61,7 @@ exports.updateCategory = (req,res) => {
 
 
 exports.removeCategory =(req, res) =>{
-    const categry = req.category;
+    const category = req.Category;
 
 
     category.remove((err,category) => {
