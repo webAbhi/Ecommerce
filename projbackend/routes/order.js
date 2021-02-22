@@ -3,9 +3,8 @@ const router = express.Router();
 
 const {isSignedIn, isAutenticated, isAdmin}=require("../controllers/auth");
 const {getUserById, pushOrderInPurchaseList}=require("../controllers/user");
-const {getOrderById, getAllOrder, createOrder, updateStaus, getOrderStaus}= require("../controllers/order")
+const {getOrderById, getAllOrder, createOrder, updateStatus, getOrderStaus}= require("../controllers/order")
 const {updateStock}= require("../controllers/product")
-
 router.param("userId", getUserById);
 router.param("orderId", getOrderById);
 
@@ -33,7 +32,7 @@ router.put("/order/:orderId/status/:userId",
 isSignedIn,
 isAutenticated,
 isAdmin, 
-updateStaus
+updateStatus
 )
 
 

@@ -7,11 +7,11 @@ const Routes = () =>{
     return(
         <BrowserRouter>
 
-          <switch>
+          <Switch>
 
             <Route path="/" exact component={Home}/>
      
-          </switch>
+          </Switch>
         
         
         
