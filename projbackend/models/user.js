@@ -13,7 +13,6 @@ var userSchema = new Schema({
   },
   lastname:{
       type:String,
-      required:true,
       maximum:32,
       trim:true
 
