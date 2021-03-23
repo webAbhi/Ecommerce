@@ -1,7 +1,7 @@
 import React from "react";
 import Base from "../core/Base"
 
-const profle() =>{
+const profile = () =>{
     return(
         <Base title="profile page">
         <h1> This is profile page</h1>
